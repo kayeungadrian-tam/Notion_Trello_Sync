@@ -1,10 +1,13 @@
 name: Cron-based Workflow
 
 on:
+  workflow_dispatch:
+    inputs:
+      parameter:
+        description: 'Description of the input parameter'
+        required: true
   schedule:
     - cron: '*/5 * * * *'  # Runs every 5 minutes
-    # - cron: '0 2 * * *'  # Runs every day at 2:00 AM UTC
-  # [push]
 
 
 env:
@@ -20,6 +23,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
               
+       - name: Run something
+        run: |
+          echo "Running job"
+          echo "Input parameter: ${{ github.event.inputs.parameter_name }}"
+          
       - name: Set up Python 3.8
         uses: actions/setup-python@v4
         with:
