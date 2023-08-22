@@ -50,4 +50,6 @@ jobs:
 
 
       - name: Run main script
-        run: python3 src/run_sync.py
+        run: 
+          source .venv/bin/activate \
+          python3 src/run_sync.py
