@@ -1,7 +1,7 @@
 import os
 from datetime import datetime, timedelta
 
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import requests
 from tqdm import tqdm
 
