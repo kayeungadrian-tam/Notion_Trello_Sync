@@ -11,6 +11,8 @@ env:
   NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
   NOTION_DATABASE_ID: "e6f79ea022654be9b2a621e74d204918"
   TRELLO_BOARD_ID: "SRW7G0Mx"
+  TRELLO_KEY: ${{ secrets.TRELLO_KEY }}
+  TRELLO_TOKEN: ${{ secrets.TRELLO_TOKEN }}
 
 jobs:
   build:

@@ -99,6 +99,8 @@ def get_today_date():
 def main():
     today = get_today_date()
 
+    print(os.environ.get("TRELLO_BOARD_ID"), flush=True)
+
     trello_handler = TrelloHandler(os.getenv("TRELLO_TOKEN"), os.getenv("TRELLO_KEY"))
     cards = trello_handler.get_cards(os.getenv("TRELLO_BOARD_ID")).json()
     lists = trello_handler.get_lists(os.getenv("TRELLO_BOARD_ID")).json()
