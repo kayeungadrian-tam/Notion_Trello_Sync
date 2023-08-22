@@ -79,7 +79,7 @@ class TrelloHandler:
         return response
 
 
-load_dotenv()
+# load_dotenv()
 
 
 def create_id_map_from_list(json_list: list[dict], key: str):
