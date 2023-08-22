@@ -1,9 +1,10 @@
 name: Cron-based Workflow
 
 on:
-  # schedule:
+  schedule:
+    - cron: '*/5 * * * *'  # Runs every 5 minutes
     # - cron: '0 2 * * *'  # Runs every day at 2:00 AM UTC
-  [push]
+  # [push]
 
 
 env:
@@ -24,5 +25,8 @@ jobs:
         with:
           python-version: 3.8
       
-      - name: Run something on schedule
-        run: python3 src/test.py
+      # - name: Run something on schedule
+      #   run: python3 src/test.py
+
+      - name: Run main script
+        run: python3 src/run_sync.py

@@ -106,7 +106,7 @@ def main():
 
     notion_handler = NotionHandler(os.getenv("NOTION_TOKEN"))
 
-    for card in tqdm(cards[:]):
+    for card in tqdm(cards[:10]):
         card_dict = {}
 
         id_list = card.get("idList")
