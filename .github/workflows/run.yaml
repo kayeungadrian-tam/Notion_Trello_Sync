@@ -1,0 +1,28 @@
+name: Cron-based Workflow
+
+on:
+  # schedule:
+    # - cron: '0 2 * * *'  # Runs every day at 2:00 AM UTC
+  [push]
+
+
+env:
+  NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+  NOTION_DATABASE_ID: "e6f79ea022654be9b2a621e74d204918"
+  TRELLO_BOARD_ID: "SRW7G0Mx"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+              
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+      
+      - name: Run something on schedule
+        run: python3 src/test.py
