@@ -82,7 +82,7 @@ class TrelloHandler:
 # load_dotenv()
 
 
-def create_id_map_from_list(json_list: list[dict], key: str):
+def create_id_map_from_list(json_list: list, key: str):
     id_map = {}
     for data in json_list:
         id_key = data.get(key)
