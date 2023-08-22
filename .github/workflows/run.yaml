@@ -43,13 +43,5 @@ jobs:
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: poetry install --no-interaction --no-root
 
-      - name: Run something
-        run: |
-          echo "Running job"
-          echo "Input parameter: ${{ github.event.inputs.parameter_name }}"
-
-
-      - name: Run main script
-        run: 
-          source .venv/bin/activate \
-          python3 src/run_sync.py
+        - name: Run Python script
+          run: poetry run python src/run_sync.py
