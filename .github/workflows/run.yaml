@@ -20,6 +20,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+      
       - name: Install Poetry
         uses: snok/install-poetry@v1
         with:
@@ -43,10 +48,6 @@ jobs:
           echo "Running job"
           echo "Input parameter: ${{ github.event.inputs.parameter_name }}"
 
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.8
 
       - name: Run main script
         run: python3 src/run_sync.py
